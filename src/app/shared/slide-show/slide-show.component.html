@@ -1,0 +1,29 @@
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div *ngFor="let pelicula of peliculas"
+     class="swiper-slide"
+     [ngStyle]="{
+      'background-size':'cover',
+      'background-image': 'url(https://image.tmdb.org/t/p/w500'+ pelicula.backdrop_path + ')'
+  }"
+     >
+    <div class="pelicula-descripcion">
+      <h3>{{pelicula.title}} <button class="btn btn-outline-light btn-sm" (click)="onMovieclick(pelicula)">Detalles</button></h3>
+      <p>{{pelicula.overview | slice:0:140}}...</p>  <!--Con el slice acortamos la descripcion de las peliculas-->
+    </div>
+    </div>
+
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev" (click)="onSliderPrev()"></div>
+  <div class="swiper-button-next"(click)="onSliderNext()"></div>
+
+  
+
+</div>

@@ -1,0 +1,13 @@
+<div class="bg-md-sm">
+<h1>Cartelera</h1>
+<div class="row" *ngIf="pelicula.length > 0"> <!--El ngIf es para que nos reciba todos los elementos-->
+    <div class="col">
+        <app-slide-show [peliculas]="peliculasSlideShow"></app-slide-show>
+    </div>
+</div>
+</div>
+
+<div class="bg-md-sm">
+<h1 class="md-5">Estrenos</h1>
+<app-peliculas-poster *ngIf="pelicula.length > 0" [peliculas]="pelicula" ></app-peliculas-poster>
+</div>

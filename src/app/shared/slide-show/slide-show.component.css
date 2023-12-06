@@ -1,0 +1,16 @@
+.swiper{
+    width: 600px;
+    height: 330px;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: white;
+}
+
+.pelicula-descripcion{
+    background-color: rgba(0,0,0,0.3);
+    bottom: 0;  /* Este es para que no nos aparezca en la parte superior */
+    padding: 5px 30px;
+    position: absolute;
+    width: 100%;
+}

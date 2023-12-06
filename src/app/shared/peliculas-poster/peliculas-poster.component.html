@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-3 mb-5 animate__animated animate__fadeIn" *ngFor="let pelicula of peliculas">
+    
+    <div>
+      <h3 class="mt-2">{{ pelicula.title}}</h3>
+      <br>
+      <div >
+        <button type="button" class="btn btn-outline-secondary" style="color: blue;" ngbPopover="{{pelicula.overview}}" 
+          triggers="mouseenter:mouseleave" popoverTitle="Sinopsis:{{pelicula.title}}">
+          <img [src]=" pelicula.poster_path | poster" class="img-thumbnail img-fluid cursor"
+      (click)="onMovieClick(pelicula)" />
+        </button>
+      </div>
+      <h2>Datos de la pelicula</h2>
+      <p> Lenguaje Original:{{pelicula.original_language}}</p>
+      <p>Fecha Estreno: {{pelicula.release_date}}</p>
+      <p >Genero : {{pelicula.genre_ids}}</p>
+      <div class="row">
+        <div class="col-10 text-white">
+          <ngb-rating style="color: yellow" [rate]="pelicula.vote_average"></ngb-rating>
+        </div>
+        <div class="col-2 text-white">
+          {{ pelicula.vote_average | number:'1.1-2' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
